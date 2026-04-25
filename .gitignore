@@ -1,0 +1,23 @@
+# Compilados de Java
+*.class
+*.log
+
+# Carpeta de salida de Maven (¡Súper importante!)
+target/
+
+# Archivos de configuración de VS Code
+.vscode/
+
+# Archivos de configuración de IntelliJ IDEA
+.idea/
+*.iml
+
+# Archivos de configuración de Eclipse
+.settings/
+.bin/
+.classpath
+.project
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
