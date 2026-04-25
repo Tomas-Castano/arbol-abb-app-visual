@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="abbtree.controller.TreeViewController">
+    
+    <top>
+        <HBox styleClass="header-pane" alignment="CENTER_LEFT" spacing="20">
+            <Label text="BST Viewer" styleClass="title-label" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="statusLabel" text="Status: Idle" styleClass="status-label" />
+        </HBox>
+    </top>
+
+    <left>
+        <ScrollPane fitToWidth="true" styleClass="sidebar-scroll" vbarPolicy="AS_NEEDED" hbarPolicy="NEVER">
+            <VBox styleClass="sidebar-pane" spacing="15" prefWidth="260">
+                <padding><Insets top="20" right="15" bottom="20" left="15"/></padding>
+                
+                <Label text="NODE OPERATIONS" styleClass="section-label"/>
+                <TextField fx:id="inputField" promptText="Enter Integer..." styleClass="input-field"/>
+                <HBox spacing="10">
+                    <Button fx:id="btnInsert" text="Insert" onAction="#handleInsert" styleClass="action-button" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                    <Button fx:id="btnSearch" text="Search" onAction="#handleSearch" styleClass="action-button" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                </HBox>
+                <Button fx:id="btnDelete" text="Delete" onAction="#handleDelete" styleClass="danger-button" maxWidth="Infinity"/>
+                
+                <Separator styleClass="separator-dark"/>
+                
+                <Label text="RANDOM GENERATOR" styleClass="section-label"/>
+                <HBox spacing="10">
+                    <TextField fx:id="randomInput" promptText="Max Nodes" styleClass="input-field" HBox.hgrow="ALWAYS" prefWidth="80"/>
+                    <Button fx:id="btnRandom" text="Generate" onAction="#handleGenerateRandom" styleClass="secondary-button"/>
+                </HBox>
+
+                <Separator styleClass="separator-dark"/>
+                
+                <Label text="TRAVERSALS" styleClass="section-label"/>
+                <VBox spacing="10">
+                    <Button fx:id="btnPreorder" text="Preorder" onAction="#handlePreorder" styleClass="secondary-button" maxWidth="Infinity"/>
+                    <Button fx:id="btnInorder" text="Inorder" onAction="#handleInorder" styleClass="secondary-button" maxWidth="Infinity"/>
+                    <Button fx:id="btnPostorder" text="Postorder" onAction="#handlePostorder" styleClass="secondary-button" maxWidth="Infinity"/>
+                </VBox>
+
+                <Separator styleClass="separator-dark"/>
+
+                <Label text="TREE ACTIONS" styleClass="section-label"/>
+                <Button fx:id="btnCenter" text="Center View" onAction="#handleCenterView" styleClass="secondary-button" maxWidth="Infinity"/>
+                <Button fx:id="btnBalance" text="Balance Tree" onAction="#handleBalance" styleClass="secondary-button" maxWidth="Infinity"/>
+                <Button fx:id="btnClear" text="Clear Tree" onAction="#handleClear" styleClass="danger-button" maxWidth="Infinity"/>
+
+                <Separator styleClass="separator-dark"/>
+                
+                <Label text="ANIMATION DELAY" styleClass="section-label"/>
+                <Slider fx:id="speedSlider" min="1" max="10" value="4" showTickMarks="true" showTickLabels="true" majorTickUnit="1" blockIncrement="1"/>
+                <Label text="Fast  &lt;--------------&gt;  Slow" styleClass="muted-text"/>
+
+            </VBox>
+        </ScrollPane>
+    </left>
+
+    <center>
+        <Pane fx:id="viewportPane" styleClass="canvas-pane">
+            <Pane fx:id="treePane" />
+        </Pane>
+    </center>
+
+    <right>
+        <VBox styleClass="log-pane" prefWidth="320">
+            <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+            <Label text="Logs" styleClass="section-label" />
+            <ListView fx:id="logListView" VBox.vgrow="ALWAYS" styleClass="log-list"/>
+        </VBox>
+    </right>
+
+</BorderPane>

@@ -8,17 +8,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * JavaFX App
- */
 public class App extends Application {
 
     private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
-        scene.getStylesheets().add(getClass().getResource("/abbtree/css/styles.css").toExternalForm());
+        scene = new Scene(loadFXML("fxml/TreeView"), 1200, 750); 
+        stage.setTitle("BST Visualizer");
         stage.setScene(scene);
         stage.show();
     }
@@ -28,12 +25,11 @@ public class App extends Application {
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/abbtree/" + fxml + ".fxml"));
         return fxmlLoader.load();
     }
 
     public static void main(String[] args) {
         launch();
     }
-
 }
