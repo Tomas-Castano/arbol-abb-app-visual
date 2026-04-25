@@ -184,6 +184,26 @@ public class BSTTree<T extends Comparable<T>> {
         root = null;
     }
 
+    public void cascadeDelete(TreeNode<T> currentNode) {
+    if (currentNode == null) return;
+
+    cascadeDelete(currentNode.getLeft());
+    cascadeDelete(currentNode.getRight());
+
+    currentNode.setLeft(null);
+    currentNode.setRight(null);
+    }
+
+    public void addMultipleNodes(T... values) {
+    if (values == null || values.length == 0) {
+        return;
+    }
+
+    for (T value : values) {
+        add(value);
+    }
+    }
+
     public TreeNode<T> getRoot() {
         return root;
     }
