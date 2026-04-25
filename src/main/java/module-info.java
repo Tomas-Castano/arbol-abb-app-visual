@@ -1,7 +1,7 @@
-module arbolabb {
+module abbtree {
     requires javafx.controls;
     requires javafx.fxml;
 
-    opens arbolabb to javafx.fxml;
-    exports arbolabb;
+    opens abbtree to javafx.fxml;
+    exports abbtree;
 }
