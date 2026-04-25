@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="arbolabb.controller.ArbolController"
+            prefWidth="950" prefHeight="600"
+            styleClass="root-pane">
+
+    <!-- ═══════════════════════════════════════════
+         TOOLBAR SUPERIOR
+    ═══════════════════════════════════════════ -->
+    <top>
+        <VBox styleClass="toolbar">
+
+            <!-- Fila 1: Input + operaciones principales -->
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label text="Dato:" styleClass="toolbar-label"/>
+                <TextField fx:id="inputDato"
+                           promptText="Ingresa un número"
+                           prefWidth="140"
+                           styleClass="input-field"/>
+
+                <Separator orientation="VERTICAL" styleClass="sep"/>
+
+                <Button fx:id="btnAgregar"
+                        text="Agregar"
+                        onAction="#agregarDato"
+                        styleClass="btn-primary"/>
+                <Button fx:id="btnEliminar"
+                        text="Eliminar"
+                        onAction="#eliminarDato"
+                        styleClass="btn-danger"/>
+                <Button fx:id="btnExiste"
+                        text="¿Existe?"
+                        onAction="#existeDato"
+                        styleClass="btn-secondary"/>
+                <Button fx:id="btnNivel"
+                        text="Nivel"
+                        onAction="#obtenerNivel"
+                        styleClass="btn-secondary"/>
+
+                <Separator orientation="VERTICAL" styleClass="sep"/>
+
+                <Button fx:id="btnBorrarArbol"
+                        text="Borrar árbol"
+                        onAction="#borrarArbol"
+                        styleClass="btn-danger"/>
+            </HBox>
+
+            <!-- Fila 2: Recorridos -->
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label text="Recorridos:" styleClass="toolbar-label"/>
+                <Button text="Inorden"    onAction="#recorrerInorden"    styleClass="btn-secondary"/>
+                <Button text="Preorden"   onAction="#recorrerPreorden"   styleClass="btn-secondary"/>
+                <Button text="Postorden"  onAction="#recorrerPostorden"  styleClass="btn-secondary"/>
+                <Button text="Amplitud"   onAction="#recorrerAmplitud"   styleClass="btn-secondary"/>
+            </HBox>
+
+        </VBox>
+    </top>
+
+    <!-- ═══════════════════════════════════════════
+         CUERPO: Canvas + Sidebar
+    ═══════════════════════════════════════════ -->
+    <center>
+        <HBox>
+
+            <!-- Canvas donde se dibuja el árbol -->
+            <StackPane HBox.hgrow="ALWAYS" styleClass="canvas-wrapper">
+                <Label text="Inserta datos para visualizar el árbol"
+                       fx:id="lblCanvasVacio"
+                       styleClass="canvas-hint"/>
+                <Canvas fx:id="arbolCanvas"
+                        width="700"
+                        height="460"/>
+            </StackPane>
+
+            <!-- Sidebar derecho -->
+            <VBox prefWidth="210" styleClass="sidebar">
+
+                <!-- Métricas -->
+                <VBox styleClass="sidebar-section">
+                    <Label text="INFORMACIÓN" styleClass="sidebar-title"/>
+
+                    <HBox styleClass="stat-row">
+                        <Label text="Peso" styleClass="stat-label" HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="lblPeso" text="—" styleClass="stat-value"/>
+                    </HBox>
+                    <HBox styleClass="stat-row">
+                        <Label text="Altura" styleClass="stat-label" HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="lblAltura" text="—" styleClass="stat-value"/>
+                    </HBox>
+                    <HBox styleClass="stat-row">
+                        <Label text="Hojas" styleClass="stat-label" HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="lblHojas" text="—" styleClass="stat-value"/>
+                    </HBox>
+                    <HBox styleClass="stat-row">
+                        <Label text="Mayor" styleClass="stat-label" HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="lblMayor" text="—" styleClass="stat-value"/>
+                    </HBox>
+                    <HBox styleClass="stat-row">
+                        <Label text="Menor" styleClass="stat-label" HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="lblMenor" text="—" styleClass="stat-value"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Salida de recorridos -->
+                <VBox styleClass="sidebar-section" VBox.vgrow="ALWAYS">
+                    <Label text="SALIDA" styleClass="sidebar-title"/>
+                    <TextArea fx:id="areaOutput"
+                              editable="false"
+                              wrapText="true"
+                              VBox.vgrow="ALWAYS"
+                              styleClass="output-area"/>
+                </VBox>
+
+                <!-- Botón limpiar salida -->
+                <Button text="Limpiar salida"
+                        onAction="#limpiarSalida"
+                        maxWidth="Infinity"
+                        styleClass="btn-ghost"/>
+
+            </VBox>
+        </HBox>
+    </center>
+
+    <!-- ═══════════════════════════════════════════
+         BARRA DE ESTADO INFERIOR
+    ═══════════════════════════════════════════ -->
+    <bottom>
+        <HBox styleClass="statusbar" spacing="20">
+            <Label fx:id="lblEstado"   text="Árbol vacío"/>
+            <Label fx:id="lblRaiz"     text="Raíz: —"/>
+            <Label fx:id="lblUltOp"    text="Última operación: —"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

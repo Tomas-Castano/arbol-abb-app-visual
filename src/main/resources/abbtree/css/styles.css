@@ -1,0 +1,218 @@
+/* ═══════════════════════════════════════════════
+   ROOT & BASE
+═══════════════════════════════════════════════ */
+.root-pane {
+    -fx-background-color: #F1EFE8;
+    -fx-font-family: "Segoe UI", "Inter", sans-serif;
+    -fx-font-size: 13px;
+}
+
+/* ═══════════════════════════════════════════════
+   TOOLBAR
+═══════════════════════════════════════════════ */
+.toolbar {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 10 14 10 14;
+    -fx-spacing: 8;
+    -fx-border-color: #D3D1C7;
+    -fx-border-width: 0 0 1 0;
+}
+
+.toolbar-label {
+    -fx-text-fill: #888780;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.sep {
+    -fx-padding: 0 4 0 4;
+    -fx-background-color: #D3D1C7;
+}
+
+/* ═══════════════════════════════════════════════
+   INPUT
+═══════════════════════════════════════════════ */
+.input-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #B4B2A9;
+    -fx-border-width: 0.5px;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 5 10 5 10;
+    -fx-font-size: 13px;
+    -fx-text-fill: #2C2C2A;
+    -fx-prompt-text-fill: #888780;
+}
+
+.input-field:focused {
+    -fx-border-color: #185FA5;
+    -fx-border-width: 1.5px;
+}
+
+/* ═══════════════════════════════════════════════
+   BOTONES
+═══════════════════════════════════════════════ */
+
+/* Primario — azul */
+.btn-primary {
+    -fx-background-color: #185FA5;
+    -fx-text-fill: #E6F1FB;
+    -fx-border-color: #185FA5;
+    -fx-border-width: 0.5px;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 5 14 5 14;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+}
+.btn-primary:hover {
+    -fx-background-color: #0C447C;
+}
+.btn-primary:pressed {
+    -fx-background-color: #042C53;
+}
+
+/* Secundario — neutro */
+.btn-secondary {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #2C2C2A;
+    -fx-border-color: #B4B2A9;
+    -fx-border-width: 0.5px;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 5 14 5 14;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+}
+.btn-secondary:hover {
+    -fx-background-color: #F1EFE8;
+}
+.btn-secondary:pressed {
+    -fx-background-color: #D3D1C7;
+}
+
+/* Danger — rojo */
+.btn-danger {
+    -fx-background-color: #A32D2D;
+    -fx-text-fill: #FCEBEB;
+    -fx-border-color: #A32D2D;
+    -fx-border-width: 0.5px;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 5 14 5 14;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+}
+.btn-danger:hover {
+    -fx-background-color: #791F1F;
+}
+.btn-danger:pressed {
+    -fx-background-color: #501313;
+}
+
+/* Ghost — para acciones secundarias */
+.btn-ghost {
+    -fx-background-color: transparent;
+    -fx-text-fill: #5F5E5A;
+    -fx-border-color: transparent;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8 14 8 14;
+    -fx-cursor: hand;
+    -fx-font-size: 12px;
+}
+.btn-ghost:hover {
+    -fx-background-color: #F1EFE8;
+    -fx-text-fill: #2C2C2A;
+}
+
+/* ═══════════════════════════════════════════════
+   CANVAS AREA
+═══════════════════════════════════════════════ */
+.canvas-wrapper {
+    -fx-background-color: #F1EFE8;
+    -fx-border-color: #D3D1C7;
+    -fx-border-width: 0 1 0 0;
+}
+
+.canvas-hint {
+    -fx-text-fill: #B4B2A9;
+    -fx-font-size: 13px;
+}
+
+/* ═══════════════════════════════════════════════
+   SIDEBAR
+═══════════════════════════════════════════════ */
+.sidebar {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D3D1C7;
+    -fx-border-width: 0 0 0 1;
+    -fx-spacing: 0;
+}
+
+.sidebar-section {
+    -fx-padding: 12 14 12 14;
+    -fx-spacing: 6;
+    -fx-border-color: #D3D1C7;
+    -fx-border-width: 0 0 1 0;
+}
+
+.sidebar-title {
+    -fx-text-fill: #888780;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 4 0;
+}
+
+.stat-row {
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 2 0 2 0;
+}
+
+.stat-label {
+    -fx-text-fill: #5F5E5A;
+    -fx-font-size: 12px;
+}
+
+.stat-value {
+    -fx-text-fill: #185FA5;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+/* ═══════════════════════════════════════════════
+   OUTPUT TEXTAREA
+═══════════════════════════════════════════════ */
+.output-area {
+    -fx-background-color: #F1EFE8;
+    -fx-border-color: transparent;
+    -fx-background-radius: 6;
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 12px;
+    -fx-text-fill: #2C2C2A;
+    -fx-control-inner-background: #F1EFE8;
+}
+
+.output-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.output-area .content {
+    -fx-background-color: transparent;
+}
+
+/* ═══════════════════════════════════════════════
+   STATUS BAR
+═══════════════════════════════════════════════ */
+.statusbar {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 5 14 5 14;
+    -fx-border-color: #D3D1C7;
+    -fx-border-width: 1 0 0 0;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.statusbar .label {
+    -fx-text-fill: #888780;
+    -fx-font-size: 11px;
+}
